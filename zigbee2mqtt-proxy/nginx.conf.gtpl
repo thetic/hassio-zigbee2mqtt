@@ -54,6 +54,8 @@ http {
 
             set $args                   $args&token=$token;
             proxy_pass                  $target;
+            proxy_ssl_server_name       on;
+            proxy_ssl_name              $proxy_host;
             proxy_http_version          1.1;
             proxy_ignore_client_abort   off;
             proxy_read_timeout          86400s;
